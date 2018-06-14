@@ -10,13 +10,13 @@ public class SumOfDigitsTest {
     int result;
 
     @Test
-    public void testSumOfDigitsIfNumberNegative() {
+    public void whenNumberNegativeShouldLeaveMinusSignAndAddDigits() {
         result = sumOfDigits.sumOfDigits(-25);
         assertEquals(7,result);
     }
 
     @Test
-    public void testSumOfDigitsIfNumberPositive() {
+    public void whenNumberPositiveAddDigits() {
         result = sumOfDigits.sumOfDigits(999);
         assertEquals(27,result);
     }
