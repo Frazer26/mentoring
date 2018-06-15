@@ -14,6 +14,9 @@ public class Main {
         System.out.println();
 
         Year year = new Year();
-        System.out.println(year.percentageOfYearCount(2018,1,14,22,48));
+        System.out.println(year.percentageOfYearCount(2018,6,14,22,23));
+
+        Validation email = new Validation();
+        System.out.println(email.validateEmail(null));
     }
 }

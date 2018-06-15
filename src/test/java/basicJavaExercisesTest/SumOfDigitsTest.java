@@ -6,8 +6,9 @@ import static org.junit.Assert.*;
 
 
 public class SumOfDigitsTest {
-    SumOfDigits sumOfDigits = new SumOfDigits();
-    int result;
+
+    private SumOfDigits sumOfDigits = new SumOfDigits();
+    private int result;
 
     @Test
     public void whenNumberNegativeShouldLeaveMinusSignAndAddDigits() {
