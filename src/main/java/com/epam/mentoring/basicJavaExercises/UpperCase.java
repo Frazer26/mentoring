@@ -22,12 +22,12 @@ public class UpperCase {
         String[] parts;
         StringBuilder sb = new StringBuilder();
         try {
-            if (!sentence.contains(" ")) {
+            if (!sentence.contains(whiteSpace)) {
                 return "";
             } else {
                 parts = sentence.split(whiteSpace);
                 for (String word : parts) {
-                   sb.append(word.substring(0,1).toUpperCase() + word.substring(1) + " ");
+                   sb.append(word.substring(0,1).toUpperCase() + word.substring(1) + whiteSpace);
                 }
                 return sb.toString().replaceFirst(endOfChar,"");
             }
