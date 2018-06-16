@@ -1,5 +1,7 @@
 package com.epam.mentoring.basicJavaExercises;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -18,5 +20,8 @@ public class Main {
 
         Validation email = new Validation();
         System.out.println(email.validateEmail(null));
+
+        oddTimes asd = new oddTimes();
+        System.out.println(Arrays.toString(asd.foundOddOccurrence(new int[]{2,2,5,8,9})));
     }
 }
