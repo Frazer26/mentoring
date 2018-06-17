@@ -13,9 +13,7 @@ public class Rotation {
             int realFirstElement = nums[0];
             do {
                 int replacement = nums[nums.length - 1];
-                for (int i = nums.length - 1; i > 0; i--) {
-                    nums[i] = nums[i - 1];
-                }
+                System.arraycopy(nums, 0, nums, 1, nums.length - 1);
                 nums[0] = replacement;
 
                 System.out.println(Arrays.toString(nums));
