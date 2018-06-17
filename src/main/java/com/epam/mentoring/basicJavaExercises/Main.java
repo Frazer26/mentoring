@@ -31,5 +31,9 @@ public class Main {
         rotation.rotateNums(new int[0]);
         rotation.rotateNums(new int[]{1});
         rotation.rotateNums(new int[]{1,2});
+
+        System.out.println();
+        QuadraticFormula quadraticFormula = new QuadraticFormula();
+        System.out.println(quadraticFormula.calcQuadraticFormula(3,4,-4));
     }
 }
