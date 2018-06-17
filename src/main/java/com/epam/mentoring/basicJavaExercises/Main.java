@@ -23,5 +23,11 @@ public class Main {
 
         oddTimes asd = new oddTimes();
         System.out.println(Arrays.toString(asd.foundOddOccurrence(new int[]{2,2,5,8,9})));
+
+        Rotation rotation = new Rotation();
+        rotation.rotateNums(new int[]{1,2,3,4});
+        rotation.rotateNums(new int[0]);
+        rotation.rotateNums(new int[]{1});
+        rotation.rotateNums(new int[]{1,2});
     }
 }
