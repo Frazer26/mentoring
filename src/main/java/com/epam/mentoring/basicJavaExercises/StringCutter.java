@@ -1,7 +1,5 @@
 package com.epam.mentoring.basicJavaExercises;
 
-import static com.epam.mentoring.basicJavaExercises.UpperCase.endOfChar;
-import static com.epam.mentoring.basicJavaExercises.UpperCase.whiteSpace;
 
 public class StringCutter {
 
@@ -11,24 +9,45 @@ public class StringCutter {
 //    You should trim it at the nth character but don' t cut any word in half.
 //    Instead, move back to the closest whitespace and trim there!", 25
 //    ouput: "This is a very long"
-    public String splitString(String str, int n) {
-        int count = 0;
-        StringBuilder sb = new StringBuilder();
 
-        if (str == null || n <= 0) {
+//    public String splitString(String str, int n) {
+//        int count = 0;
+//        StringBuilder sb = new StringBuilder();
+//
+//        if (str == null || n <= 0) {
+//            return "";
+//        }
+//
+//        String[] words = str.split(whiteSpace);
+//        for (String word : words) {
+//            count += word.length();
+//            if (count < n) {
+//                sb.append(word).append(" ");
+//            }
+//            count += 1; //cause of whitespace
+//        }
+//
+//        return sb.toString().replaceFirst(endOfChar, "");
+//    }
+
+    public String splitString(String str, int n) {
+        String sentence = "";
+
+        if (str == null || n <= 0 || n > str.length()) {
             return "";
         }
 
-        String[] words = str.split(whiteSpace);
-        for (String word : words) {
-            count += word.length();
-            if (count < n) {
-                sb.append(word).append(" ");
-            }
-            count += 1; //cause of whitespace
+        if (Character.isWhitespace(str.charAt(n + 1))) {
+            sentence = str.substring(0, n);
         }
 
-        return sb.toString().replaceFirst(endOfChar, "");
+        for (int i = n - 1; i >= 0; i--) {
+            if (Character.isWhitespace(str.charAt(i))) {
+                sentence = str.substring(0, i);
+                break;
+            }
+        }
+        return sentence;
     }
 }
 

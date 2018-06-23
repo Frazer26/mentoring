@@ -16,7 +16,7 @@ public class Main {
         System.out.println();
 
         Year year = new Year();
-        System.out.println(year.percentageOfYearCount(2018,6,14,22,23));
+        System.out.println(year.percentageOfYearCount(2018,6,23,22,23));
 
         Validation email = new Validation();
         System.out.println(email.validateEmail(null));
@@ -34,6 +34,8 @@ public class Main {
 
         System.out.println();
         QuadraticFormula quadraticFormula = new QuadraticFormula();
-        System.out.println(quadraticFormula.calcQuadraticFormula(3,4,-4));
+        quadraticFormula.calcQuadraticFormula(8,-6,1);
+        quadraticFormula.calcQuadraticFormula(1,-4,4);
+        quadraticFormula.calcQuadraticFormula(1,3,8);
     }
 }

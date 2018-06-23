@@ -8,28 +8,9 @@ import static org.junit.Assert.assertEquals;
 public class ValidationTest {
 
     private Validation validation = new Validation();
-    private Boolean isHuWord;
     private Boolean validMail;
 
-    @Test
-    public void whenWordEqualsHuShouldReturnTrue() {
-        isHuWord = validation.isLastWordHu("hu");
-        assertEquals(true, isHuWord);
-    }
-
-    @Test
-    public void whenLastWordEqualsHuShouldReturnTrue() {
-        isHuWord = validation.isLastWordHu("alahu");
-        assertEquals(true, isHuWord);
-    }
-
-    @Test
-    public void whenLastWordNotEqualsHuShouldReturnFalse() {
-        isHuWord = validation.isLastWordHu("com");
-        assertEquals(false, isHuWord);
-    }
-
-    @Test
+   @Test
     public void whenEmailParameterNullShouldReturnFalse() {
         validMail = validation.validateEmail(null);
         assertEquals(false, validMail);

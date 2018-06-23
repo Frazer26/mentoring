@@ -1,8 +1,9 @@
 package com.epam.mentoring.basicJavaExercises;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class oddTimes {
 
@@ -12,31 +13,23 @@ public class oddTimes {
 //    output: [2, 5, 7]
 
     public int[] foundOddOccurrence(int[] nums) {
-        int counter = 1;
-        List<Integer> odd = new ArrayList<Integer>();
+        List<Integer> oddList = new ArrayList<>();
+        HashMap<Integer, Integer> numbers = new HashMap<>();
 
-        Arrays.sort(nums);
-        for (int i = 0; i < nums.length - 1; i++) {
-            if (nums[i] == nums[i + 1]) {
-                counter += 1;
+        for (int num : nums) {
+            if (numbers.get(num) == null) {
+                numbers.put(num, 1);
             } else {
-                if (counter % 2 != 0) {
-                    odd.add(nums[i]);
-                }
-                counter = 1;
+                numbers.put(num, numbers.get(num) + 1);
             }
         }
-        if (nums.length > 2 && counter % 2 != 0) {
-            odd.add(nums[nums.length - 2]);
-        }
-        if (nums.length > 1 && nums[nums.length - 1] != nums[nums.length - 2]) {
-            odd.add(nums[nums.length - 1]);
-        }
 
-        int[] array;
-        array = convertIntegerListToIntArray(odd);
-
-        return array;
+        for (Integer key : numbers.keySet()) {
+            if (numbers.get(key) % 2 == 1) {
+                oddList.add(key);
+            }
+        }
+        return convertIntegerListToIntArray(oddList);
 
     }
 

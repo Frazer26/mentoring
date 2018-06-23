@@ -13,7 +13,7 @@ public class DuplicateIntegers {
         for (int num : nums) {
             numsSet.add(num);
         }
-
-        return numsSet.stream().mapToInt(i->i).toArray();
+        System.out.println(numsSet.stream().mapToInt(i -> i));
+        return numsSet.stream().mapToInt(i -> i).toArray();
     }
 }

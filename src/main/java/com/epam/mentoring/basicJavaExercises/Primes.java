@@ -1,5 +1,7 @@
 package com.epam.mentoring.basicJavaExercises;
 
+import static org.apache.commons.math3.primes.Primes.isPrime;
+
 public class Primes {
 //    Write a method that takes a positive integer as input
 //    and counts the number of primes up to the given number! (including that one, too)
@@ -12,18 +14,5 @@ public class Primes {
             }
         }
         return count;
-    }
-
-    public boolean isPrime(int num) {
-        Boolean prime = true;
-        if (num < 2) {
-            prime = false;
-        }
-        for (int i = 2; i <= Math.sqrt(num); i++) {
-            if (num % i == 0) {
-                prime = false;
-            }
-        }
-        return prime;
     }
 }
